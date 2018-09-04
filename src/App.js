@@ -22,7 +22,6 @@ class App extends Component {
         provider: {id: '', last_name: '', first_name: '', email_address: '', specialty: '', practice_name: ''}
 
       }
-      console.log(this.state);
       this.providerHandler=this.providerHandler.bind(this);
       this.removeProviders=this.removeProviders.bind(this);
       this.saveProvider=this.saveProvider.bind(this);
@@ -38,23 +37,17 @@ class App extends Component {
     } else {
         selectedProviders.push(provider);
     }
-    console.log(selectedProviders);
     this.setState({selectedProviders:selectedProviders})
   }
 
   removeProviders() {
     const selectedProviders = Object.assign([], this.state.selectedProviders);
     const providers = Object.assign([], this.state.providers);
-    console.log('removeProviders')
-    console.log(providers);
-    console.log(selectedProviders);
     selectedProviders.forEach(provider => {
         const delIndex = providers.indexOf(provider);
         if (delIndex !== -1) {
             providers.splice(delIndex, 1);
         }
-        console.log(selectedProviders);
-        console.log(providers)
     });
     this.setState({providers: providers, selectedProviders: []})
   }
@@ -67,10 +60,9 @@ class App extends Component {
       provider.email_address = data['emailAddress'];
       provider.specialty = data['specialty'];
       provider.practice_name = data['practiceName'];
-      console.log('saveProvider')
-      console.log(providers);
       providers.push(provider);
-      this.setState({providers:providers})
+      this.setState({providers:providers, provider: {id: '', last_name: '', first_name: '', email_address: '', specialty: '', practice_name: ''}})
+      e.preventDefault();
     }
   render() {
     return (
