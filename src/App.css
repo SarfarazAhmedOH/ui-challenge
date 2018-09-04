@@ -1,0 +1,93 @@
+.App {
+    text-align: left;
+    background: #D3D3D3;
+    background-size: 100% auto;
+    color: #000000;
+    padding-top: none;
+    padding-bottom: none;
+    margin-bottom: none;
+    font-family: Caecilia, Serif !important;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#app-header {
+    background: #808080;
+    background-size: 100% auto;
+    color: #000000;
+    height: 10vh;
+    padding-top: none;
+    padding-bottom: none;
+    margin-bottom: none;
+    font-family: Caecilia, Serif !important;
+}
+
+#app-header h3 {
+    width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3vw;
+}
+
+.scroll-provider {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.row {
+  display: flex; /* equal height of the children */
+  width: 100%;
+  height: 100%;
+}
+
+.column-one {
+  flex: 1 1 0;
+  padding: 1em;
+  border: solid;
+}
+
+.column-two {
+  flex: 2 1 0;
+  padding: 1em;
+  border: solid;
+}
+
+label, input{
+display: block;
+}
+
+.bold-text {
+    font-weight: bold;
+    display: block;
+}
+
+.text-left {
+    float: left;
+}
+.text-right {
+    float: right;
+}
