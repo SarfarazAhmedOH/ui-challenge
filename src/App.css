@@ -8,68 +8,27 @@
     margin-bottom: none;
     font-family: Caecilia, Serif !important;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-#app-header {
-    background: #808080;
-    background-size: 100% auto;
-    color: #000000;
-    height: 10vh;
-    padding-top: none;
-    padding-bottom: none;
-    margin-bottom: none;
-    font-family: Caecilia, Serif !important;
-}
-
-#app-header h3 {
-    width: 100% !important;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 3vw;
-}
-
-.scroll-provider {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    width: 100%;
-}
-
 .row {
   display: flex; /* equal height of the children */
   width: 100%;
   height: 100%;
 }
 
+.column-beg {
+  width: 2em;
+  padding: 1em;
+  border: none;
+}
 .column-one {
   flex: 1 1 0;
   padding: 1em;
   border: solid;
 }
-
+.column-mid {
+  width: 1.5em;
+  padding: 1em;
+  border: none;
+}
 .column-two {
   flex: 2 1 0;
   padding: 1em;
@@ -78,8 +37,9 @@
 
 label, input{
 display: block;
+color: black;
+font-size: 14px
 }
-
 .bold-text {
     font-weight: bold;
     display: block;
@@ -90,4 +50,44 @@ display: block;
 }
 .text-right {
     float: right;
+}
+
+.scroll-provider {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+.col-sm-8 {
+  background: #fff;
+  border: 1px solid #8b7ecd;
+  border-radius: 3px;
+}
+small {
+  color: #5bc0de;
+}
+span.active {
+  color: #9C27B0;
+}
+small.active {
+  color: #9C27B0;
+  font-weight: 700;
+}
+h4 {
+  font-size: 20px;
+}
+.btn .caret {
+  margin-left: 5px;
+}
+
+.dropdown-menu a {
+  position: relative;
+}
+.glyphicon-ok {
+  position: absolute;
+  top: 4px;
+  right: 15px;
 }

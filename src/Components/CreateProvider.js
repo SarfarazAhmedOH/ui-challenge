@@ -5,55 +5,65 @@ class CreateProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: '',
-            lastName: '',
-            firstName: '',
-            emailAddress: '',
+            last_name: '',
+            first_name: '',
+            email_address: '',
             specialty: '',
-            practiceName: ''
+            practice_name: ''
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
    handleChange(e) {
-     /*
-               Because we named the inputs to match their
-               corresponding values in state, it's
-               super easy to update the state
-             */
-             this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
    }
 
+    handleSubmit (e) {
+        e.preventDefault();
+        const last_name = this.state.last_name;
+        const first_name = this.state.first_name;
+        const email_address = this.state.email_address;
+        const specialty = this.state.specialty;
+        const practice_name = this.state.practice_name;
+        this.props.params.saveProvider(e, {last_name, first_name, email_address, specialty, practice_name});
+        this.setState({last_name: ''});
+        this.setState({first_name: ''});
+        this.setState({email_address: ''});
+        this.setState({specialty: ''});
+        this.setState({practice_name: ''});
+    }
     render () {
         return (
-            <form >
+            <form onSubmit={(e) => this.handleSubmit(e)}>
               <span className={'bold-text'}>Create Provider</span>
               <label>
                 Last Name:
-                <input type="text" name="lastName" required onChange={this.handleChange}/>
+                <input type="text" name="last_name" value={this.state.last_name} required onChange={this.handleChange}/>
               </label>
               <br/>
               <label>
                 First Name:
-                <input type="text" name="firstName" required onChange={this.handleChange}/>
+                <input type="text" name="first_name" value={this.state.first_name} required onChange={this.handleChange}/>
               </label>
               <br/>
               <label>
                 Email Address:
-                <input type="text" name="emailAddress" required onChange={this.handleChange}/>
+                <input type="text" name="email_address" value={this.state.email_address} required onChange={this.handleChange}/>
               </label>
               <br/>
               <label>
                 Specialty:
-                <input type="text" name="specialty" onChange={this.handleChange}/>
+                <input type="text" name="specialty" value={this.state.specialty} onChange={this.handleChange}/>
               </label>
               <br/>
               <label>
                 Practice Name:
-                <input type="text" name="practiceName" onChange={this.handleChange}/>
+                <input type="text" name="practice_name" value={this.state.practice_name} onChange={this.handleChange}/>
               </label>
               <br/>
-              <button onClick={((e) => this.props.saveProvider(e, Object.assign({}, this.state)))}>Submit</button>
+              <button>Submit</button>
             </form>
         );
     }
