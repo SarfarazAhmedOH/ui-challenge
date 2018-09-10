@@ -5,6 +5,7 @@ class CreateProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             last_name: '',
             first_name: '',
             email_address: '',
@@ -22,12 +23,13 @@ class CreateProvider extends Component {
 
     handleSubmit (e) {
         e.preventDefault();
+        const id = this.state.id;
         const last_name = this.state.last_name;
         const first_name = this.state.first_name;
         const email_address = this.state.email_address;
         const specialty = this.state.specialty;
         const practice_name = this.state.practice_name;
-        this.props.params.saveProvider(e, {last_name, first_name, email_address, specialty, practice_name});
+        this.props.params.saveProvider(e, {id, last_name, first_name, email_address, specialty, practice_name});
         this.setState({last_name: ''});
         this.setState({first_name: ''});
         this.setState({email_address: ''});
@@ -37,7 +39,10 @@ class CreateProvider extends Component {
     render () {
         return (
             <form onSubmit={(e) => this.handleSubmit(e)}>
-              <span className={'bold-text'}>Create Provider</span>
+              <div className='row'>
+                <span className={'col-md-12 bold-text pull-left'}>Create Provider</span>
+              </div>
+              <br/>
               <label>
                 Last Name:
                 <input type="text" name="last_name" value={this.state.last_name} required onChange={this.handleChange}/>
@@ -62,8 +67,8 @@ class CreateProvider extends Component {
                 Practice Name:
                 <input type="text" name="practice_name" value={this.state.practice_name} onChange={this.handleChange}/>
               </label>
-              <br/>
-              <button>Submit</button>
+              <br/><br/>
+              <button className={'buttonStyle'}>Submit</button>
             </form>
         );
     }
