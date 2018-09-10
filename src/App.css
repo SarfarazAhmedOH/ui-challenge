@@ -41,12 +41,6 @@
   height: 370px;
 }
 
-.check-data-inline{
-display: inline-block;
-color: black;
-font-size: 14px
-}
-
 label, input{
 display: block;
 color: black;
@@ -76,32 +70,6 @@ font-size: 14px
     height: 250px;
 }
 
-h1 {
-  margin-bottom: 50px;
-}
-.col-sm-8 {
-  background: #fff;
-  border: 1px solid #8b7ecd;
-  border-radius: 3px;
-}
-small {
-  color: #5bc0de;
-}
-span.active {
-  color: #9C27B0;
-}
-small.active {
-  color: #9C27B0;
-  font-weight: 700;
-}
-h4 {
-  font-size: 20px;
-}
-
-.line-up {
-    display: inline-block;
-}
-
 .text-size {
     font-size: 14px
 }
@@ -116,7 +84,7 @@ h4 {
 .glyphicon-ok {
   position: absolute;
   top: 4px;
-  right: 15px;
+  right: 2px;
 }
 
 .button {
@@ -159,18 +127,11 @@ a.button.button-info {
     border-color: #A9A9A9;
 }
 
-#row-color span:nth-child(odd) {background: #CCC;}
-
 .div-color:nth-child(odd) {background: #CCC;}
 
-.buttonStyle {
+.button-style {
     border: 1px solid transparent;
     border-radius: 4px;
     background-color: #FFFAFA;
     border-color: #A9A9A9;
-}
-
-.check-mark:selected {
-    content: '\2173';
-    color: red;
 }

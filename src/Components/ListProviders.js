@@ -47,7 +47,7 @@ const ListProviders = ({params}) =>  {
                      })}
               </div>
               <br/>
-              <button className={'text-right buttonStyle'} onClick={params.removeProviders}>Remove</button>
+              <button className={'text-right button-style'} onClick={params.removeProviders}>Remove</button>
         </div>
 }
 

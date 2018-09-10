@@ -68,7 +68,7 @@ class CreateProvider extends Component {
                 <input type="text" name="practice_name" value={this.state.practice_name} onChange={this.handleChange}/>
               </label>
               <br/><br/>
-              <button className={'buttonStyle'}>Submit</button>
+              <button className={'button-style'}>Submit</button>
             </form>
         );
     }

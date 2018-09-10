@@ -98,7 +98,9 @@ class App extends Component {
                  toggle: this.toggle,
                  dropdownActive: this.state.dropdownActive,
                  doOrderBy: this.doOrderBy,
-                 doOrder: this.doOrder
+                 doOrder: this.doOrder,
+                 orderBy: this.state.orderBy,
+                 order: this.state.order
              };
          }else if (mode === 'create'){
              return {
