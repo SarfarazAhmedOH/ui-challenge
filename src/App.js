@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import _ from 'lodash'
 import './App.css';
-import ListProviders from './components/ListProviders.js';
-import CreateProvider from './components/CreateProvider.js';
-import './css/Libraries/Bootstrap/css/bootstrap.css';
+import ListProviders from './Components/ListProviders.js';
+import CreateProvider from './Components/CreateProvider.js';
+import './Css/Libraries/Bootstrap/css/bootstrap.css';
 import UniqueId from 'react-html-id'
 
 class App extends Component {

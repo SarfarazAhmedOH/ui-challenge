@@ -1,7 +1,7 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 import '../App.css';
-import '../css/Libraries/Bootstrap/css/bootstrap.css';
+import '../Css/Libraries/Bootstrap/css/bootstrap.css';
 import Dropdown from './Dropdown.js';
 
 const ListProviders = ({params}) =>  {
