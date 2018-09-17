@@ -32,12 +32,16 @@ class App extends Component {
       this.doOrderBy = this.doOrderBy.bind(this);
       this.doOrder = this.doOrder.bind(this);
       this.toggle = this.toggle.bind(this);
+      this.handleClickOutside = this.handleClickOutside.bind(this);
   }
   toggle(e){
     e.preventDefault();
     let isActive = this.state.dropdownActive;
     isActive = !isActive;
     this.setState({dropdownActive: isActive});
+  }
+  handleClickOutside(){
+    this.setState({dropdownActive: false});
   }
   doOrderBy(e){
     e.preventDefault();
@@ -100,7 +104,8 @@ class App extends Component {
                  doOrderBy: this.doOrderBy,
                  doOrder: this.doOrder,
                  orderBy: this.state.orderBy,
-                 order: this.state.order
+                 order: this.state.order,
+                 handleClickOutside: this.handleClickOutside
              };
          }else if (mode === 'create'){
              return {

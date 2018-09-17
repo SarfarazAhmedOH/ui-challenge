@@ -14,7 +14,8 @@ const ListProviders = ({params}) =>  {
                         doOrderBy={ params.doOrderBy }
                         doOrder={ params.doOrder }
                         orderBy={ params.orderBy }
-                        order={ params.order } />
+                        order={ params.order }
+                        handleClickOutside={params.handleClickOutside} />
                  </span></div>
               </div>
               <br/>

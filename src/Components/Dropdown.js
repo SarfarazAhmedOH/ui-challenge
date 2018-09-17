@@ -2,6 +2,21 @@ import React from 'react';
 import '../Css/Libraries/Bootstrap/css/bootstrap.css';
 
 class Dropdown extends React.Component {
+
+  componentWillMount() {
+    document.addEventListener('mousedown', this.handleClickOutside, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside, false)
+  }
+
+  handleClickOutside = (e) => {
+    if (this.node.contains(e.target)) {
+        return;
+    }
+    this.props.handleClickOutside();
+  }
   render() {
 
     const { dropdownActive, toggle, orderBy, order, doOrderBy, doOrder } = this.props;
@@ -11,7 +26,7 @@ class Dropdown extends React.Component {
     });
 
     return (
-      <div className={ dropdownActive ? "dropdown  pull-right open" : "dropdown pull-right " }>
+      <div className={ dropdownActive ? "dropdown  pull-right open" : "dropdown pull-right " } ref={node => this.node = node}>
         <a className={'button button-info'} onClick={ toggle }>
           Sort by
           <span className="caret"></span>
