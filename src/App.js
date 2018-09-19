@@ -26,35 +26,28 @@ class App extends Component {
         dropdownActive: false,
         lastId: this.lastUniqueId()
       }
-      this.providerHandler=this.providerHandler.bind(this);
-      this.removeProviders=this.removeProviders.bind(this);
-      this.saveProvider=this.saveProvider.bind(this);
-      this.doOrderBy = this.doOrderBy.bind(this);
-      this.doOrder = this.doOrder.bind(this);
-      this.toggle = this.toggle.bind(this);
-      this.handleClickOutside = this.handleClickOutside.bind(this);
   }
-  toggle(e){
+  toggle = (e) => {
     e.preventDefault();
     let isActive = this.state.dropdownActive;
     isActive = !isActive;
     this.setState({dropdownActive: isActive});
   }
-  handleClickOutside(){
+  handleClickOutside = () => {
     this.setState({dropdownActive: false});
   }
-  doOrderBy(e){
+  doOrderBy = (e) => {
     e.preventDefault();
     const newOrderBy = e.target.getAttribute('data-value');
     this.setState({orderBy : newOrderBy});
   }
-  doOrder(e){
+  doOrder = (e) => {
     e.preventDefault();
     const newOrder = e.target.getAttribute('data-value');
     this.setState({order : newOrder});
   }
 
-  providerHandler(e, provider) {
+  providerHandler = (e, provider) => {
     const selectedProviders = Object.assign([], this.state.selectedProviders);
     if (selectedProviders.includes(provider)){
         const delIndex = selectedProviders.indexOf(provider);
@@ -67,7 +60,7 @@ class App extends Component {
     this.setState({selectedProviders:selectedProviders})
   }
 
-  removeProviders() {
+  removeProviders = () => {
     const selectedProviders = Object.assign([], this.state.selectedProviders);
     const providers = Object.assign([], this.state.providers);
     selectedProviders.forEach(provider => {
@@ -79,7 +72,7 @@ class App extends Component {
     this.setState({providers: providers, selectedProviders: []})
   }
 
-  saveProvider(e, data) {
+  saveProvider = (e, data) => {
       e.preventDefault();
       const providers = Object.assign([], this.state.providers);
       const provider = data;
@@ -93,7 +86,7 @@ class App extends Component {
       this.setState({providers:providers, lastId:nextId})
     }
 
-    getParams(mode, sorted) {
+    getParams = (mode, sorted) => {
          if (mode === 'list') {
              return {
                  providers: sorted,
